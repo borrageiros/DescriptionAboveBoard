@@ -23,7 +23,7 @@ class Plugin extends Base
 
     public function getPluginDescription()
     {
-        return t('Displays the project's description above the task board and allows for editing directly from there.');
+        return t('Displays the projects description above the task board and allows for editing directly from there.');
     }
 
     public function getPluginAuthor()
