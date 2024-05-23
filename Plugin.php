@@ -9,6 +9,8 @@ class Plugin extends Base
 {
     public function initialize()
     {
+        $this->template->hook->attach('template:project:header:before', 'DescriptionAboveBoard:description/board');
+        $this->route->addRoute('/project/:project_id/description/update', 'ProjectDescriptionController', 'update', 'DescriptionAboveBoard');
     }
 
     public function onStartup()
