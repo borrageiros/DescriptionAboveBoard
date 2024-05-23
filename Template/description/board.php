@@ -1,5 +1,5 @@
 <style>
-    .description-above-board form textarea, .description-above-board form .text-editor-view-mode {
+    .description-above-board form textarea, .description-above-board form .text-editor-view-mode, .description-above-board form .text-editor-preview-area {
         width: 100% !important;
     }
     #description-above-board-submit {
