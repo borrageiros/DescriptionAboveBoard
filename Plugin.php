@@ -3,7 +3,7 @@
 namespace Kanboard\Plugin\DescriptionAboveBoard;
 
 use Kanboard\Core\Plugin\Base;
-use Kanboard\Core\Translator;
+use Kanboard\Core\Helper\FormHelper;
 
 class Plugin extends Base
 {
@@ -15,7 +15,6 @@ class Plugin extends Base
 
     public function onStartup()
     {
-        Translator::load($this->languageModel->getCurrentLanguage(), __DIR__.'/Locale');
     }
 
     public function getPluginName()

@@ -1,16 +1,22 @@
 <style>
-    #descripcion-above-board {
-        width: 100%;
+    .description-above-board form textarea {
+        width: 100% !important;
+    }
+    #description-above-board-submit {
+        margin: 20px;
     }
 </style>
 
 <div class="description-above-board">
     <form id="description-form" method="post" action="<?= $this->url->href('ProjectDescriptionController', 'update', ['plugin' => 'DescriptionAboveBoard', 'project_id' => $project['id']]) ?>">
-        <textarea name="descripcion" id="descripcion-above-board"><?= $project['description']?></textarea>
-        <br/>
-        <br/>
-        <button type="submit" class="btn btn-blue"><?= t('Save') ?></button>
-        <br/>
-        <br/>
+        <?php
+            echo $this->helper->form->textEditor(
+                'descripcion',
+                ['descripcion' => $project['description'], 'project_id' => $project['id']],
+                [],
+                ['autofocus' => false, 'required' => false]
+            );
+        ?>
+        <button id="description-above-board-submit" type="submit" class="btn btn-blue"><?= t('Save') ?></button>
     </form>
 </div>
