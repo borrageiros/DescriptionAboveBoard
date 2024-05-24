@@ -10,13 +10,16 @@
 <div class="description-above-board">
     <form id="description-form" method="post" action="<?= $this->url->href('ProjectDescriptionController', 'update', ['plugin' => 'DescriptionAboveBoard', 'project_id' => $project['id']]) ?>">
         <?php
-            echo $this->helper->form->textEditor(
-                'descripcion',
-                ['descripcion' => $project['description'], 'project_id' => $project['id']],
-                [],
-                ['autofocus' => false, 'required' => false]
-            );
+            $controller = isset($_GET['controller']) ? $_GET['controller'] : '';
+            if ($controller === 'BoardViewController') {
+                echo $this->helper->form->textEditor(
+                    'descripcion',
+                    ['descripcion' => $project['description'], 'project_id' => $project['id']],
+                    [],
+                    ['autofocus' => false, 'required' => false]
+                );
+                echo '<button id="description-above-board-submit" type="submit" class="btn btn-blue">' . t('Save') . '</button>';
+            }
         ?>
-        <button id="description-above-board-submit" type="submit" class="btn btn-blue"><?= t('Save') ?></button>
     </form>
 </div>
