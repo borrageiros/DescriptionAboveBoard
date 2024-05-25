@@ -11,7 +11,7 @@
     <form id="description-form" method="post" action="<?= $this->url->href('ProjectDescriptionController', 'update', ['plugin' => 'DescriptionAboveBoard', 'project_id' => $project['id']]) ?>">
         <?php
             $controller = isset($_GET['controller']) ? $_GET['controller'] : '';
-            if ($controller === 'BoardViewController') {
+            if ($controller === 'BoardViewController' && !empty($project['description'])) {
                 echo $this->helper->form->textEditor(
                     'descripcion',
                     ['descripcion' => $project['description'], 'project_id' => $project['id']],

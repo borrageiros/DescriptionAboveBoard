@@ -5,6 +5,8 @@ This project is a plugin for the [Kanboard](https://kanboard.org/) project.
 
 It displays the project's description above the task board and allows for editing directly from there.
 
+**The panel will only be activated if a description is set.**
+
 ![screenshot](./readme/screenshot.jpg)
 
 Author
